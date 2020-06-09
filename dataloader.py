@@ -51,7 +51,7 @@ num_epochs=10
 criterion = nn.CrossEntropyLoss().to(device)
 optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
 model=model.to(device)
-"""
+
 total_step = len(train_loader)
 loss_list = []
 acc_list = []
@@ -86,7 +86,7 @@ torch.save({
 'optimizer' : optimizer.state_dict()},
 'checkpoint.epoch.resnet.{}.pth.tar'.format(epoch))
 # print(outputs)
-"""
+
 checkpoint='checkpoint.epoch.resnet.9.pth.tar'
 model=ResNet()
 model.load_state_dict(torch.load(checkpoint)['state_dict'])
